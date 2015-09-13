@@ -22,4 +22,8 @@ public class ShopService {
 		shopDao.save(shop);
 	}
 	
+	public Shop find(Integer id){
+		return shopDao.find(id);
+	}
+	
 }

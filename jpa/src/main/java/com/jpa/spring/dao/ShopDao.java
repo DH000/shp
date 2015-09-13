@@ -23,4 +23,8 @@ public class ShopDao {
 		entityManager.persist(shop);
 	}
 	
+	public Shop find(Integer id){
+		return entityManager.find(Shop.class, id);
+	}
+	
 }

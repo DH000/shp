@@ -21,7 +21,7 @@ public class PersonService {
 	public void save(Person p1, Person p2){
 		personDao.save(p1);
 		
-		int n = 10 / 0;
+//		int n = 10 / 0;
 		
 		personDao.save(p2);
 	}

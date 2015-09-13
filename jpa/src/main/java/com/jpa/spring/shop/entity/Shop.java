@@ -2,6 +2,7 @@ package com.jpa.spring.shop.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +14,7 @@ import javax.persistence.Table;
 
 import com.jpa.spring.entity.Person;
 
+@Cacheable(true)
 @Entity
 @Table(name = "JPA_SHOP")
 public class Shop implements Serializable {

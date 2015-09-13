@@ -40,5 +40,25 @@ public class JpaSpringServiceTest {
 		shopService.save(shop2);
 	}
 	
-	
+	/**
+	 * 
+	 * desc: 不在同一个session范围内无法实现懒加载 但spring提供了OpenEntityManagerInViewFilter<br/>
+	 *  <filter>
+	 *		<filter-name>openEntityManagerInViewFilter</filter-name>
+	 *		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+	 *	</filter>
+	 *	<filter-mapping>
+	 *		<filter-name>openEntityManagerInViewFilter</filter-name>
+	 *		<url-pattern>/*</url-pattern>
+	 *	</filter-mapping>
+	 * 
+	 * 
+	 * 
+	 */
+	@Test
+	public void testFind(){
+		Shop shop = shopService.find(2);
+		System.out.println(shop);
+		System.out.println(shop.getPerson());
+	}
 }
