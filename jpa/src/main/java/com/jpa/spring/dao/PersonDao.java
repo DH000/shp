@@ -2,6 +2,7 @@ package com.jpa.spring.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -26,4 +27,9 @@ public class PersonDao {
 		entityManager.persist(person);
 	}
 	
+	public Person findByJpql(Integer id){
+		Query query = entityManager.createQuery("from Person p where p.id = :id");
+		query.setParameter("id", id);
+		return (Person) query.getSingleResult();
+	}
 }

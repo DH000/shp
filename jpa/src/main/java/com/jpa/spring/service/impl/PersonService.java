@@ -26,4 +26,7 @@ public class PersonService {
 		personDao.save(p2);
 	}
 	
+	public Person findByJpql(Integer id){
+		return personDao.findByJpql(id);
+	}
 }

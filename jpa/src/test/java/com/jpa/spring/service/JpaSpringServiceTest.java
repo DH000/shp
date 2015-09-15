@@ -40,6 +40,11 @@ public class JpaSpringServiceTest {
 		shopService.save(shop2);
 	}
 	
+	@Test
+	public void testJpql(){
+		personService.findByJpql(1);
+	}
+	
 	/**
 	 * 
 	 * desc: 不在同一个session范围内无法实现懒加载 但spring提供了OpenEntityManagerInViewFilter<br/>
